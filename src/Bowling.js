@@ -2,13 +2,18 @@
 (function() {
 
   window.throw_bowl = function(i) {
-    window.pins.push(i);
+    return window.pins.push(i);
   };
+
   window.getScore = function() {
-     for (i=0; i < window.pins.length; i++) {
-       window.score += window.pins[i];
-     }
-       
-  }
+    var i, _i, _len, _ref, _results;
+    _ref = window.pins;
+    _results = [];
+    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+      i = _ref[_i];
+      _results.push(window.score += i);
+    }
+    return _results;
+  };
 
 }).call(this);
