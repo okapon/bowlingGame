@@ -21,13 +21,14 @@ describe("Bowling", function() {
     expect(window.score).toEqual(20);
   });
 
-  // it("全部ストライクの場合全部ガターを投げてトータル0", function() {
-  //   for(i=0;i<20;i++){
-  //     throw_bowl(0)
-  //   }
-  //   for (i=1; i<windwow.pins.length; i++) {
-  //      expect(window.pins[i]).toEqual(0);
-  //   }
-  // });
+  it("1回スペアがあるケース", function() {
+    throw_bowl(5)
+    throw_bowl(5)
+    for(i=2;i<20;i++){
+      throw_bowl(1)
+    }
+    getScore()
+    expect(window.score).toEqual(29);
+  });
 
 });
