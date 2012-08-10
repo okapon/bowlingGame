@@ -2,7 +2,13 @@
 (function() {
 
   window.throw_bowl = function(i) {
-    return window.score += i;
+    window.pins.push(i);
   };
+  window.getScore = function() {
+     for (i=0; i < window.pins.length; i++) {
+       window.score += window.pins[i];
+     }
+       
+  }
 
 }).call(this);
